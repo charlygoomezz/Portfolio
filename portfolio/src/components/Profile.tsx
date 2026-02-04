@@ -32,6 +32,8 @@ export default function Profile() {
               <a
                 key={i}
                 href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-primar border-2 border-neutral-500 
                 rounded-full hover:border-primary p-2 transition duration-200"
               >
