@@ -1,11 +1,13 @@
+import { lazy, Suspense, useEffect } from 'react';
 import Hero from '@/components/Hero';
-import Projects from '@/components/Projects';
-import About from '@/components/About';
-import Resume from '@/components/Resume';
-import Contact from '@/components/Contact';
 import { Toaster } from '@/components/ui/sonner';
 import Lenis from 'lenis';
-import { useEffect } from 'react';
+
+// Lazy loads
+const Projects = lazy(() => import('@/components/Projects'));
+const About = lazy(() => import('@/components/About'));
+const Resume = lazy(() => import('@/components/Resume'));
+const Contact = lazy(() => import('@/components/Contact'));
 
 function App() {
   useEffect(() => {
@@ -24,10 +26,12 @@ function App() {
       p-10 lg:pr-10 lg:pl-0 lg:max-w-6xl"
       >
         <Hero />
-        <Projects />
-        <About />
-        <Resume />
-        <Contact />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Projects />
+          <About />
+          <Resume />
+          <Contact />
+        </Suspense>
       </main>
       <Toaster />
     </>

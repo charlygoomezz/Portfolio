@@ -11,4 +11,23 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // React & ReactDOM
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          // UI
+          'ui-vendor': ['@radix-ui/react-label', '@radix-ui/react-slot', 'lucide-react', 'sonner'],
+          // Forms
+          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          // Animation
+          'animation-vendor': ['motion', 'lenis'],
+          // EmailJS
+          'email-vendor': ['@emailjs/browser'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 });
