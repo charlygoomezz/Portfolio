@@ -24,7 +24,9 @@ export default function About() {
         culture, traveling, and cooking—interests that fuel my creativity, focus, and perseverance.
       </motion.p>
       <motion.div variants={fadeUp} transition={{ delay: 0.2 }}>
-        <Button className="mt-5">Contact me</Button>
+        <Button className="mt-5">
+          <a href="#contact">Contact me</a>
+        </Button>
       </motion.div>
     </motion.section>
   );
