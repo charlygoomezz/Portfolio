@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -17,6 +16,7 @@ import {
 } from '@/components/ui/input-group';
 import { Button } from '@/components/ui/button';
 import { contactFormSchema, type ContactFormType } from '@/schemas/contact';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const form = useForm<ContactFormType>({
@@ -31,21 +31,35 @@ export default function Contact() {
   });
 
   function onSubmit(data: ContactFormType) {
-    toast('Message sent successfully', {
-      description: (
-        <pre className="bg-code text-code-foreground mt-2 w-[320px] overflow-x-auto rounded-md p-4">
-          <code>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-      position: 'bottom-right',
-      classNames: {
-        content: 'flex flex-col gap-2',
-      },
-      style: {
-        '--border-radius': 'calc(var(--radius) + 4px)',
-      } as React.CSSProperties,
-    });
-    console.log(data);
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          toast.success('Message sent successfully 🎉', {
+            description: 'Thanks for reaching out. I’ll get back to you soon.',
+            position: 'bottom-right',
+          });
+          form.reset();
+        },
+        error => {
+          console.error('EmailJS error:', error);
+          toast.error('Something went wrong ❌', {
+            description: 'Please try again later.',
+            position: 'bottom-right',
+          });
+        }
+      );
   }
 
   return (
@@ -128,7 +142,7 @@ export default function Contact() {
                       {...field}
                       id="form-contact-phone"
                       aria-invalid={fieldState.invalid}
-                      placeholder="Phone number"
+                      placeholder="+xx xxxxxxxxx"
                       autoComplete="off"
                     />
                     {fieldState.invalid && <FieldError errors={[fieldState.error]} />}

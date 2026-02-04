@@ -1,5 +1,3 @@
-import type { JSX } from 'react';
-
 export type ToolsType = {
   imgSrc: string;
   label: string;
@@ -20,13 +18,6 @@ export type ExperienceType = {
   title: string;
   institute: string;
   desc: string;
-};
-
-export type ServiceType = {
-  title: string;
-  desc: string;
-  projects: string;
-  icon: JSX.Element;
 };
 
 export type StatsType = {

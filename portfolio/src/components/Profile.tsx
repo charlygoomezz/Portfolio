@@ -9,11 +9,11 @@ export default function Profile() {
     >
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between gap-x-10">
-          <h1 className="text-3xl font-bold"> Carlos </h1>
+          <h1 className="text-3xl font-bold"> Carlos Gómez</h1>
           <p className="text-sm">Frontedn Developer</p>
         </div>
 
-        <img src="./avatar.jpg" alt="avatar" className="lg:w-96 rounded-2xl object-cover" />
+        <img src="./images/avatar.jpg" alt="avatar" className="lg:w-96 rounded-2xl object-cover" />
 
         <div className="mt-6">
           <p className="text-sm text-neutral-300 ">Specialization:</p>
@@ -42,7 +42,7 @@ export default function Profile() {
         </div>
 
         <Button className="mt-2" size="lg">
-          Let's work!
+          <a href="#contact"> Let's work</a>
         </Button>
       </div>
     </aside>
