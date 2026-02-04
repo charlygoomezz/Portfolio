@@ -27,8 +27,11 @@ export default function Projects() {
             key={i}
             imgSrc={project.imgSrc}
             projectLink={project.projectLink}
-            tags={project.tags}
+            stack={project.stack}
             title={project.title}
+            description={project.description}
+            descriptionLink={project.descriptionLink}
+            secondaryLink={project.secondaryLink}
           />
         ))}
       </motion.div>

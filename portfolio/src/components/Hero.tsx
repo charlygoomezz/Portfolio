@@ -35,7 +35,7 @@ export default function Hero() {
         </Button>
         <Button variant="outline" asChild>
           <a
-            href="https://drive.google.com/file/d/132KmiM4IqxLk9NpLSL4Q0ZJNS0nvOSvz/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1wGCYF25rql__m6OmkTph47kcihP7_FYV/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
           >

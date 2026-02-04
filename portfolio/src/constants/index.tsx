@@ -6,15 +6,7 @@
 /**
  * Types
  */
-import type {
-  ExperienceType,
-  LinksType,
-  ProjectType,
-  ServiceType,
-  StatsType,
-  TestimonialsType,
-  ToolsType,
-} from '@/types';
+import type { ExperienceType, LinksType, ProjectType, ServiceType, ToolsType } from '@/types';
 
 /**
  * Assets
@@ -26,7 +18,6 @@ import {
   Home,
   Layers,
   Mail,
-  MessageCircle,
   Palette,
   Rocket,
   Settings,
@@ -50,11 +41,6 @@ const navLinks: LinksType[] = [
     icon: Settings,
   },
   { label: 'Resume', link: '#resume', icon: FileText },
-  {
-    label: 'Reviews',
-    link: '#testimonials',
-    icon: MessageCircle,
-  },
   { label: 'Contact', link: '#contact', icon: Mail },
 ];
 
@@ -73,71 +59,89 @@ const socialLinks: LinksType[] = [
 
 const projectsData: ProjectType[] = [
   {
-    imgSrc: '/images/project-ph-1.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
+    imgSrc: '/images/renting-luxe.jpg',
+    title: 'Full stack renting-car web',
+    description: `Car rental web application with an admin panel for inventory management. 
+    Implements a complete user flow including Clerk authentication, favorites management, 
+    and secure payments via Stripe. Built with React, TypeScript, and Tailwind, using 
+    Prisma and Neon for efficient and scalable data persistence.`,
+    stack: [
+      { label: 'React', imgSrc: '/images/tools/react.svg' },
+      { label: 'Tailwind CSS', imgSrc: '/images/tools/tailwindcss.svg' },
+      { label: 'Neon', imgSrc: '/images/tools/neon.svg' },
+      { label: 'Typescript', imgSrc: '/images/tools/typescript.svg' },
+      { label: 'Prisma', imgSrc: '/images/tools/prisma_dark.svg' },
+      { label: 'Clerk', imgSrc: '/images/tools/clerk.svg' },
+      { label: 'Stripe', imgSrc: '/images/tools/stripe.svg' },
+    ],
+    projectLink: 'https://renting-web-alpha.vercel.app/',
   },
   {
-    imgSrc: '/images/project-ph-2.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
-  },
-  {
-    imgSrc: '/images/project-ph-3.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
-  },
-  {
-    imgSrc: '/images/project-ph-4.jpeg',
-    title: 'Full stack music app',
-    tags: ['API', 'Development'],
-    projectLink: 'https://musify-5al0.onrender.com/',
+    imgSrc: '/images/glow-up.jpg',
+    title: 'Final Degree Project - App mobile',
+    description: `A native Android application dedicated to personalizing skincare routines. 
+      Developed in Java and XML, it allows users to organize their daily habits 
+      by integrating Firebase for cloud data management and JSON Server for 
+      catalog management, resulting in a fluid and structured user experience.`,
+    descriptionLink:
+      'https://drive.google.com/file/d/1MPW-eCJqanddT5OH62vGZq_BniLPE3Vq/view?usp=drive_link',
+    stack: [
+      { label: 'Java', imgSrc: '/images/tools/java.svg' },
+      { label: 'Android', imgSrc: '/images/tools/android-icon.svg' },
+      { label: 'Firebase', imgSrc: '/images/tools/firebase.svg' },
+      { label: 'LottieFiles', imgSrc: '/images/tools/lottiefiles.svg' },
+    ],
+    projectLink: 'https://github.com/charlygoomezz/android-project',
+    secondaryLink:
+      'https://www.figma.com/deck/oluoKoeoiNWQUnMrdq2B5m/Presentacion-Glowup?node-id=8-613&t=lD5NfibcY5IfnrjU-1&scaling=min-zoom&con',
   },
 ];
 
 const education: ExperienceType[] = [
   {
-    year: '2018 – 2020',
-    title: 'Bachelor of Computer Science',
-    institute: 'National University of Technology',
-    desc: 'Focused on front-end development, UI design, and web application architecture.',
+    year: '2023 – 2025',
+    title: 'Higher Technician Degree in DAM.',
+    institute: 'Upgrade Hub',
+    desc: `Focused on the design, development, and maintenance of applications for mobile and desktop 
+    environments. The program covers interface development, application logic, database management, 
+    and testing, with a strong emphasis on practical projects and real-world problem solving.`,
   },
   {
-    year: '2021 – 2022',
-    title: 'Frontend Development Bootcamp',
-    institute: 'Udemy / Online Course',
-    desc: 'Learned modern JavaScript, React, and responsive UI patterns through real-world projects.',
-  },
-  {
-    year: '2023',
-    title: 'Advanced UI/UX Design Course',
-    institute: 'Design+Code',
-    desc: 'Explored advanced design systems, motion design, and accessibility best practices.',
+    year: '2016-2018',
+    title: 'Bachelor’s Degree in Computer Engineering (Inc.)',
+    institute: 'Alcala University',
+    desc: 'Studies focused on the understanding and application of computer systems and advanced hardware.',
   },
 ];
 
 const experience: ExperienceType[] = [
   {
-    year: '2021 – 2022',
-    title: 'Frontend Developer Intern',
-    institute: 'PixelForge Studio',
-    desc: 'Built and optimized responsive websites, collaborating closely with designers and backend teams.',
-  },
-  {
-    year: '2022 – Present',
-    title: 'UI Engineer',
-    institute: 'Freelance / Remote Work',
-    desc: 'Designed and developed web interfaces for SaaS startups using React, Tailwind, and Figma.',
+    year: '2025 – 2026',
+    title: 'Frontend Developer',
+    institute: 'Waizar',
+    desc: `Working on the development of web and mobile applications using React, Next.js, and Expo. 
+    Focused on building responsive interfaces, reusable components, and clean, maintainable code, 
+    while integrating APIs, managing application state, and collaborating within an agile, 
+    cross-functional team.`,
   },
 ];
 
 const tools: ToolsType[] = [
   {
-    label: 'Figma',
-    imgSrc: '/images/tools/figma.svg',
+    label: 'JavaScript',
+    imgSrc: '/images/tools/javascript.svg',
+  },
+  {
+    label: 'Typescript',
+    imgSrc: '/images/tools/typescript.svg',
+  },
+  {
+    label: 'Java',
+    imgSrc: '/images/tools/java.svg',
+  },
+  {
+    label: 'HTML',
+    imgSrc: '/images/tools/html5.svg',
   },
   {
     label: 'CSS',
@@ -152,20 +156,25 @@ const tools: ToolsType[] = [
     imgSrc: '/images/tools/react.svg',
   },
   {
-    label: 'JavaScript',
-    imgSrc: '/images/tools/javascript.svg',
-  },
-  {
     label: 'Node.js',
     imgSrc: '/images/tools/nodejs.svg',
   },
   {
-    label: 'Express.js',
-    imgSrc: '/images/tools/expressjs.svg',
+    label: 'Figma',
+    imgSrc: '/images/tools/figma.svg',
   },
   {
     label: 'Mongodb',
     imgSrc: '/images/tools/mongodb.svg',
+  },
+
+  {
+    label: 'Expo',
+    imgSrc: '/images/tools/expo.svg',
+  },
+  {
+    label: 'Spring',
+    imgSrc: '/images/tools/spring.svg',
   },
 ];
 
@@ -202,53 +211,4 @@ const services: ServiceType[] = [
   },
 ];
 
-const statsData: StatsType[] = [
-  {
-    number: '30+',
-    label: 'Happy Clients',
-  },
-  {
-    number: '05+',
-    label: 'Years Of Experience',
-  },
-  {
-    number: '50+',
-    label: 'Projects Done',
-  },
-];
-
-const testimonials: TestimonialsType[] = [
-  {
-    name: 'Alex Tomato',
-    role: 'Brand Manager at Instant Design',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
-    text: 'Working with David was an absolute pleasure. His attention to detail, creative insights, and ability to translate complex ideas into stunning visuals truly set him apart. He consistently went above and beyond to ensure the project exceeded expectations.',
-    link: '#',
-  },
-  {
-    name: 'Sara Bloom',
-    role: 'Founder at Bloom Agency',
-    image: 'https://randomuser.me/api/portraits/women/65.jpg',
-    text: 'David brought my brand vision to life better than I could have imagined. He is not only professional and highly skilled but also incredibly responsive and collaborative. Every aspect of the project was handled with precision and creativity.',
-    link: '#',
-  },
-  {
-    name: 'John Park',
-    role: 'CEO at PixelFlow',
-    image: 'https://randomuser.me/api/portraits/men/45.jpg',
-    text: 'From UI/UX design to front-end implementation, David handled every detail flawlessly. His problem-solving skills, innovative approach, and dedication made the entire process smooth and enjoyable. I would highly recommend him for any design-driven project.',
-    link: '#',
-  },
-];
-
-export {
-  socialLinks,
-  projectsData,
-  education,
-  experience,
-  tools,
-  services,
-  navLinks,
-  statsData,
-  testimonials,
-};
+export { socialLinks, projectsData, education, experience, tools, services, navLinks };

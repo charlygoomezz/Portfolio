@@ -13,15 +13,15 @@ export default function About() {
       className="mt-30 scroll-mt-10"
       id="about"
     >
-      <SectionHeader subtitle="About" title="Transforming compleity into effortless design" />
+      <SectionHeader
+        subtitle="About"
+        title="Code, Climb, Create: Building Digital Experiences Through Exploration."
+      />
       <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
+        I’m a curious and adventurous Front-end Developer who enjoys learning through exploration,
+        both in tech and in life. I love solving problems, whether it’s in code, in the kitchen, or
+        while planning my next trip. Outside of development, I’m passionate about climbing, Japanese
+        culture, traveling, and cooking—interests that fuel my creativity, focus, and perseverance.
       </motion.p>
       <motion.div variants={fadeUp} transition={{ delay: 0.2 }}>
         <Button className="mt-5">Contact me</Button>

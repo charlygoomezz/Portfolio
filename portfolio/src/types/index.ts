@@ -1,10 +1,18 @@
 import type { JSX } from 'react';
 
+export type ToolsType = {
+  imgSrc: string;
+  label: string;
+};
+
 export type ProjectType = {
   imgSrc: string;
   title: string;
-  tags: string[];
+  description?: string;
+  descriptionLink?: string;
+  stack: ToolsType[];
   projectLink: string;
+  secondaryLink?: string;
 };
 
 export type ExperienceType = {
@@ -21,22 +29,9 @@ export type ServiceType = {
   icon: JSX.Element;
 };
 
-export type ToolsType = {
-  imgSrc: string;
-  label: string;
-};
-
 export type StatsType = {
   number: string;
   label: string;
-};
-
-export type TestimonialsType = {
-  name: string;
-  role: string;
-  image: string;
-  text: string;
-  link: string;
 };
 
 export type LinksType = {

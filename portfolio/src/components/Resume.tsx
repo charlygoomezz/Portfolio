@@ -17,13 +17,12 @@ export default function Resume() {
     >
       <SectionHeader subtitle="Resume" title="Education and Practical Experience" />
       <motion.p variants={fadeUp} className="mt-4 text-neutral-300">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
+        Front-end Developer with a solid technical background in application development, holding a
+        Higher Technician Degree in Multiplatform Application Development (DAM). I have hands-on
+        experience building mobile and web applications using React, Expo, and Next.js, with a
+        strong focus on clean code, performance, and reusable components. I’ve worked with modern
+        tools and workflows, including CMS integrations, form management, and agile collaboration,
+        allowing me to deliver scalable and user-focused solutions.
       </motion.p>
       <div className="grid gap-x-10 my-16 md:grid-cols-2">
         <motion.div variants={fadeUp} className="mb-16 md:mb-0">
@@ -46,7 +45,7 @@ export default function Resume() {
       </div>
       <div className="my-16">
         <motion.h2 variants={fadeUp} className="text-3xl font-semibold mb-8 capitalize">
-          My favorite tools
+          My Stack Knowledge
         </motion.h2>
         <motion.div
           initial="hidden"
