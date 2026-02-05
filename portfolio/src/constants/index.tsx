@@ -6,12 +6,23 @@
 /**
  * Types
  */
-import type { ExperienceType, LinksType, ProjectType, ToolsType } from '@/types';
+import type { ExperienceType, LinksType, ProjectType, ToolsType, CollabsType } from '@/types';
 
 /**
  * Assets
  */
-import { Briefcase, FileText, Home, Mail, Settings, User, Linkedin, Github } from 'lucide-react';
+import {
+  Briefcase,
+  FileText,
+  Home,
+  Mail,
+  Settings,
+  User,
+  Linkedin,
+  Github,
+  LaptopMinimal,
+  Smartphone,
+} from 'lucide-react';
 
 const navLinks: LinksType[] = [
   { label: 'Home', link: '#hero', icon: Home },
@@ -104,7 +115,7 @@ const experience: ExperienceType[] = [
   {
     year: '2025 – 2026',
     title: 'Frontend Developer',
-    institute: 'Waizar',
+    company: 'Waizard',
     desc: `Working on the development of web and mobile applications using React, Next.js, and Expo. 
     Focused on building responsive interfaces, reusable components, and clean, maintainable code, 
     while integrating APIs, managing application state, and collaborating within an agile, 
@@ -164,4 +175,28 @@ const tools: ToolsType[] = [
   },
 ];
 
-export { socialLinks, projectsData, education, experience, tools, navLinks };
+const collabs: CollabsType[] = [
+  {
+    title: 'Faboa - Luxry Travel mobile app',
+    description: `Developed the mobile frontend of Faboa.ai, a luxury travel platform 
+    offering personalized itineraries powered by AI and expert curation. Delivered a 
+    smooth and intuitive user experience optimized for premium users on mobile devices.`,
+    company: 'Faboa',
+    role: 'Frontend Mobile Developer',
+    link: 'https://faboa.ai',
+    icon: Smartphone,
+  },
+  {
+    title: 'KleoHub - Landing Page',
+    description: `Developed the full landing page for Kleo, a fintech platform that 
+    streamlines access to financing for startups and SMEs using advanced digital tools 
+    and intelligent automation. Built the complete UI and configured the CMS to deliver 
+    a polished, high‑impact web presence that clearly communicates the product value. `,
+    company: 'Kleo',
+    role: 'Product Engineer',
+    link: 'https://www.kleohub.com/',
+    icon: LaptopMinimal,
+  },
+];
+
+export { socialLinks, projectsData, education, experience, tools, navLinks, collabs };

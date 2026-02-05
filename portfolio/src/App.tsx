@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import { Toaster } from '@/components/ui/sonner';
 import Lenis from 'lenis';
+import Collabs from './components/Collabs';
 
 // Lazy loads
 const Projects = lazy(() => import('@/components/Projects'));
@@ -28,6 +29,7 @@ function App() {
         <Hero />
         <Suspense fallback={<div className="min-h-screen" />}>
           <Projects />
+          <Collabs />
           <About />
           <Resume />
           <Contact />

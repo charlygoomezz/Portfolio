@@ -16,7 +16,8 @@ export type ProjectType = {
 export type ExperienceType = {
   year: string;
   title: string;
-  institute: string;
+  institute?: string;
+  company?: string;
   desc: string;
 };
 
@@ -27,6 +28,14 @@ export type StatsType = {
 
 export type LinksType = {
   label: string;
+  link: string;
+  icon: React.ElementType;
+};
+export type CollabsType = {
+  title: string;
+  description: string;
+  company: string;
+  role: string;
   link: string;
   icon: React.ElementType;
 };
