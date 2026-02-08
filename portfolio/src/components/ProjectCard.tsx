@@ -10,6 +10,7 @@ export default function ProjectCard({
   descriptionLink,
   projectLink,
   secondaryLink,
+  textSecondaryLink,
 }: ProjectType) {
   return (
     <motion.div variants={fadeUp} className="space-y-3">
@@ -43,7 +44,7 @@ export default function ProjectCard({
               rel="noopener noreferrer"
               className="bg-teal-100 text-black border border-gray-300 px-3 py-1 rounded-md text-sm font-medium hover:bg-primary hover:border-primary transition shadow-lg"
             >
-              Watch Presentation
+              {textSecondaryLink}
             </a>
           </div>
         )}

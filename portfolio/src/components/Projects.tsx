@@ -11,7 +11,7 @@ export default function Projects() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
       variants={staggerContainer(0.6)}
-      className="mt-30 scroll-mt-10"
+      className="mt-20 scroll-mt-10"
       id="projects"
     >
       <SectionHeader title="My featured projeccts" subtitle="Projects" />
@@ -32,6 +32,7 @@ export default function Projects() {
             description={project.description}
             descriptionLink={project.descriptionLink}
             secondaryLink={project.secondaryLink}
+            textSecondaryLink={project.textSecondaryLink}
           />
         ))}
       </motion.div>

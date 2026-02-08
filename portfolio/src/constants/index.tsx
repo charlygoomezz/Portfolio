@@ -72,6 +72,8 @@ const projectsData: ProjectType[] = [
       { label: 'Stripe', imgSrc: '/images/tools/stripe.svg' },
     ],
     projectLink: 'https://renting-web-alpha.vercel.app/',
+    secondaryLink: 'https://github.com/charlygoomezz/Retail-Web',
+    textSecondaryLink: 'Github',
   },
   {
     imgSrc: '/images/glow-up.jpg',
@@ -91,6 +93,7 @@ const projectsData: ProjectType[] = [
     projectLink: 'https://github.com/charlygoomezz/android-project',
     secondaryLink:
       'https://www.figma.com/deck/oluoKoeoiNWQUnMrdq2B5m/Presentacion-Glowup?node-id=8-613&t=lD5NfibcY5IfnrjU-1&scaling=min-zoom&con',
+    textSecondaryLink: 'Watch presentation',
   },
 ];
 
@@ -133,10 +136,6 @@ const tools: ToolsType[] = [
     imgSrc: '/images/tools/typescript.svg',
   },
   {
-    label: 'Java',
-    imgSrc: '/images/tools/java.svg',
-  },
-  {
     label: 'HTML',
     imgSrc: '/images/tools/html5.svg',
   },
@@ -159,19 +158,6 @@ const tools: ToolsType[] = [
   {
     label: 'Figma',
     imgSrc: '/images/tools/figma.svg',
-  },
-  {
-    label: 'Mongodb',
-    imgSrc: '/images/tools/mongodb.svg',
-  },
-
-  {
-    label: 'Expo',
-    imgSrc: '/images/tools/expo.svg',
-  },
-  {
-    label: 'Spring',
-    imgSrc: '/images/tools/spring.svg',
   },
 ];
 

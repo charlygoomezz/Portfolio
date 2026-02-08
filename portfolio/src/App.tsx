@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import { Toaster } from '@/components/ui/sonner';
 import Lenis from 'lenis';
 import Collabs from './components/Collabs';
+import Stack from './components/Stack';
 
 // Lazy loads
 const Projects = lazy(() => import('@/components/Projects'));
@@ -28,9 +29,10 @@ function App() {
       >
         <Hero />
         <Suspense fallback={<div className="min-h-screen" />}>
+          <About />
+          <Stack />
           <Projects />
           <Collabs />
-          <About />
           <Resume />
           <Contact />
         </Suspense>

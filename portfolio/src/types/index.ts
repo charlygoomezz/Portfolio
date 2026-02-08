@@ -11,6 +11,7 @@ export type ProjectType = {
   stack: ToolsType[];
   projectLink: string;
   secondaryLink?: string;
+  textSecondaryLink?: string;
 };
 
 export type ExperienceType = {
