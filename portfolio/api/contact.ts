@@ -1,3 +1,5 @@
+import emailjs from '@emailjs/nodejs';
+
 export default async function handler(
   req: { method: string; body: Record<string, unknown> },
   res: {
@@ -9,28 +11,20 @@ export default async function handler(
   }
 
   try {
-    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        service_id: process.env.EMAILJS_SERVICE_ID,
-        template_id: process.env.EMAILJS_TEMPLATE_ID,
-        user_id: process.env.EMAILJS_PUBLIC_KEY,
-        template_params: req.body,
-      }),
-    });
-
-    const text = await response.text();
-
-    if (!response.ok) {
-      console.error('EmailJS API error:', response.status, text);
-      return res.status(response.status).json({ error: text });
-    }
+    await emailjs.send(
+      process.env.EMAILJS_SERVICE_ID!,
+      process.env.EMAILJS_TEMPLATE_ID!,
+      req.body as Record<string, unknown>,
+      {
+        publicKey: process.env.EMAILJS_PUBLIC_KEY,
+        privateKey: process.env.EMAILJS_PRIVATE_KEY,
+      },
+    );
 
     return res.status(200).json({ success: true });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Internal server error';
-    console.error('EmailJS fetch error:', message);
+    console.error('EmailJS error:', message);
     return res.status(500).json({ error: message });
   }
 }
