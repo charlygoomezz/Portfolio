@@ -1,5 +1,3 @@
-'use client';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -16,7 +14,6 @@ import {
 } from '@/components/ui/input-group';
 import { Button } from '@/components/ui/button';
 import { contactFormSchema, type ContactFormType } from '@/schemas/contact';
-import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const form = useForm<ContactFormType>({
@@ -30,36 +27,31 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(data: ContactFormType) {
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
-        {
-          name: data.name,
-          email: data.email,
-          company: data.company,
-          phone: data.phone,
-          message: data.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          toast.success('Message sent successfully 🎉', {
-            description: 'Thanks for reaching out. I’ll get back to you soon.',
-            position: 'bottom-right',
-          });
-          form.reset();
-        },
-        error => {
-          console.error('EmailJS error:', error);
-          toast.error('Something went wrong ❌', {
-            description: 'Please try again later.',
-            position: 'bottom-right',
-          });
-        }
-      );
+  async function onSubmit(data: ContactFormType) {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(error || `HTTP ${response.status}`);
+      }
+
+      toast.success('Message sent successfully 🎉', {
+        description: 'Thanks for reaching out. I\u2019ll get back to you soon.',
+        position: 'bottom-right',
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Contact API error:', error);
+      toast.error('Something went wrong ❌', {
+        description: 'Please try again later.',
+        position: 'bottom-right',
+      });
+    }
   }
 
   return (

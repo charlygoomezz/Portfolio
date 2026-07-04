@@ -23,8 +23,6 @@ export default defineConfig({
           'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
           // Animation
           'animation-vendor': ['motion', 'lenis'],
-          // EmailJS
-          'email-vendor': ['@emailjs/browser'],
         },
       },
     },
