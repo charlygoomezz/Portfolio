@@ -116,6 +116,16 @@ const education: ExperienceType[] = [
 
 const experience: ExperienceType[] = [
   {
+    year: '2026 – Current ',
+    title: 'Frontend Developer',
+    company: 'Implemental Systems',
+    desc: `Development of web and mobile interfaces using **React and TypeScript**, applying modern frontend 
+    development practices and modular architectures. Migration and adaptation of **business logic and methods 
+    from PNI and Smallworld to React, modernizing existing functionalities and improving maintainability. 
+    Development and implementation of GIS systems for the visualization, management, and manipulation of 
+    geospatial data, integrating GIS capabilities into web and mobile applications.`,
+  },
+  {
     year: '2025 – 2026',
     title: 'Frontend Developer',
     company: 'Waizard',
